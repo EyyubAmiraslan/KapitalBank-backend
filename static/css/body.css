@@ -30,14 +30,25 @@
     padding: 5px 25px;
     cursor: pointer;
 }
+.body_buttons_span a{
+    color: #2e3131;
+
+}
 .body_buttons_span:active{
     background-color: #ef3e42;
+    color: white;
+}
+.body_buttons_span:active a{
     color: white;
 }
 .body_buttons_span:hover{
     background-color: #ef3e42;
     color: white;
     transition: .1s;
+}
+.body_buttons_span:hover a{
+    color: white;
+
 }
 .img_body_div{
     margin-top: 80px;

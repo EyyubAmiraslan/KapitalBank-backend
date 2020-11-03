@@ -12,18 +12,18 @@ def populate_form_choices(registration_form):
     type_choices = list((t.id, t.type_name) for t in types)
     registration_form.type_name.choices = type_choices
     
-@app.route("/")
+@app.route("/cards/")
 def body():
     cards = Cards.query.all()
     return render_template('body.html', cards=cards)
 
-@app.route('/cards', methods=['GET', 'POST'])
+@app.route('/create_card/', methods=['GET', 'POST'])
 def card():
     form = CardForm()
     populate_form_choices(form)
     if request.method == 'POST':
         if form.validate_on_submit():
-            card = Cards(card_name=form.card_name.data, card_platform=form.card_platform.data, card_info=form.card_info.data, card_price=form.card_price.data,card_service=form.card_service.data,card_type=form.type_name.data, card_image_url = form.card_img.data)
+            card = Cards(card_name=form.card_name.data, card_platform=form.card_platform.data, card_info=form.card_info.data, card_price=form.card_price.data, card_service=form.card_service.data,card_type=form.type_name.data, card_image_url = form.card_img.data)
             card.save()
             return redirect(request.url)
     

@@ -3,8 +3,11 @@ $('.body_buttons_span').click(function(){
     var isotope = $('.isotope')
     isotope.css('display', 'none');
     $('.body_buttons_span').css({
-        'color': "#2e3131",
         "background-color":'white'
+        
+    })
+    $('.body_buttons_span').children().css({
+        'color': "#2e3131",
         
     })
     $(this).css({

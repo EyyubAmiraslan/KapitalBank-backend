@@ -29,7 +29,7 @@
           <div class="d-flex justify-content-between align-items-center">
             <div class="brand">
               <a href="#">
-                <img src="static/logo/kapitallogo.svg" alt="" />
+                <img src="/logo/kapitallogo.svg" alt="" />
               </a>
             </div>
             <ul class="d-none d-lg-flex align-items-center">
@@ -57,7 +57,7 @@
             <ul class="d-md-flex d-lg-none">
               <li>
                 <button class="btn btn-custom-primary btn-sm btn-rounded mr-2 shadow-none">
-                  <img src="assets/images/birbank.svg" alt="" />
+                  <img src="/footer_logo/birbank.svg" alt="" />
                 </button>
                 <button class="btn btn-custom-primary btn-sm btn-rounded shadow-none btn-burger">
                   <i class="fa fa-bars outline-none"></i>
@@ -317,7 +317,7 @@
                 <a href="#" target="_blank" class="hover-red text-decoration-none btn btn-custom-primary btn-sm btn-rounded d-flex shadow-none burger">
                   <img
                     class="mr-1"
-                    src="./assets/images/birbank.svg"
+                    src="/footer_logo/birbank.svg"
                     alt=""
                   />BirBank
                 </a>
@@ -338,7 +338,11 @@
                     </div>
                 </div>
             </div>
-
+              <style>
+                .body_buttons_span a{
+                  text-decoration: none;
+                }
+              </style>
                
         </div>
         <div class="container" >
@@ -346,11 +350,11 @@
                 <div class="col-md-12 d-flex justify-content-center" >
                     <div class="buttons" >
                         <ul class="body_buttons_ul d-flex " >
-                            <li><span  class="body_buttons_span"   data-type="sade"><a href="{{url_for('card_type', cards_type='sade')}}">Sadə</a></span></li>
-                            <li><span class="body_buttons_span" data-type="premium"> <a href="{{url_for('card_type', cards_type='gold')}}">Premium</a></span></li>
-                            <li><span class="body_buttons_span" data-type="taksit"> <a href="{{url_for('card_type', cards_type='taksit')}}">Taksit</a> </span></li>
-                            <li><span class="body_buttons_span" data-type="hediyye"><a href="{{url_for('card_type', cards_type='hediyye')}}">Hədiyyə</a></span></li>
-                            <li><span class="body_buttons_span" data-type="digital"> <a href="{{url_for('card_type', cards_type='digital')}}">Digital</a></span></li></ul>
+                            <li><span  class="body_buttons_span" data-type="sade"><a href="#sade">Sadə</a></span></li>
+                            <li><span class="body_buttons_span" data-type="premium"> <a href="#gold">Premium</a></span></li>
+                            <li><span class="body_buttons_span" data-type="taksit"> <a href="#taksit">Taksit</a> </span></li>
+                            <li><span class="body_buttons_span" data-type="hediyye"><a href="#hediyye">Hədiyyə</a></span></li>
+                            <li><span class="body_buttons_span" data-type="digital"> <a href="#digital">Digital</a></span></li></ul>
                     </div>
                 </div>
             </div>
@@ -359,11 +363,11 @@
        <div class="img_body_div" >
            <!-- First Card -->
             {% for card in cards %}
-            <div  class="sade1 isotope container" data-type="sade"  >
+            <div  class="sade1 isotope container" data-type="{{card.cards.type_name}}"  >
                 <div class="row" >
                     <div  class="col-md-6 col-12 " >
                         <div class="umico_debet d-flex justify-content-center" >
-                        <img src="static/cards_photo/{{card.card_image_url}}" alt="">
+                        <img src="/cards_photo/{{card.card_image_url}}" alt="">
                         </div>
                     </div>
                     <div class="col-md-6 col-12 h-100 " >
@@ -406,21 +410,9 @@
                     
                         </div>
                   </div>      
-                       
-
-                       
-                     
-                                   
                 </div>
             </div>
             {% endfor %}
-            
-            
-       
-                            
-                        
-                      
-          
        <div class="container" >
            <div class="under_line" >
             <hr class="mt-4" > 
@@ -437,8 +429,8 @@
 
 <!-- Flex Direction Menu -->
 <div class="chat_container">
-    <div class="img_container" >  
-      <img id="img_container_img" onclick="myFunction()" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzNweCIgaGVpZ2h0PSI3M3B4IiB2aWV3Qm94PSIwIDAgNzMgNzMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUxLjIgKDU3NTE5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGNpcmNsZSBpZD0icGF0aC0xIiBjeD0iMzIuNSIgY3k9IjMyLjUiIHI9IjMyLjUiPjwvY2lyY2xlPgogICAgICAgIDxmaWx0ZXIgeD0iLTEwLjglIiB5PSItNy43JSIgd2lkdGg9IjEyMS41JSIgaGVpZ2h0PSIxMjEuNSUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgaWQ9ImZpbHRlci0yIj4KICAgICAgICAgICAgPGZlT2Zmc2V0IGR4PSIwIiBkeT0iMiIgaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9InNoYWRvd09mZnNldE91dGVyMSI+PC9mZU9mZnNldD4KICAgICAgICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMCAgIDAgMCAwIDAgMCAgIDAgMCAwIDAgMCAgMCAwIDAgMC4yMjg3OTg2ODcgMCIgdHlwZT0ibWF0cml4IiBpbj0ic2hhZG93Qmx1ck91dGVyMSI+PC9mZUNvbG9yTWF0cml4PgogICAgICAgIDwvZmlsdGVyPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IlByZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1ODcuMDAwMDAwLCAtNjEzLjAwMDAwMCkiPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU5MS4wMDAwMDAsIDYxNS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC01LUNvcHkiPgogICAgICAgICAgICAgICAgICAgIDxnIGlkPSJPdmFsLTQiPgogICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjEiIGZpbHRlcj0idXJsKCNmaWx0ZXItMikiIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9IiNFQjU2NTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3LjAwMDAwMCwgMjEuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTIxLjcxNDgzMjUsMTIuMTk0Nzk4IEMyMC44OTkwNDMxLDEyLjE5NDc5OCAyMC4yNDY0MTE1LDExLjQ5NzUwOTcgMjAuMjQ2NDExNSwxMC42NjA3NjM3IEMyMC4yNDY0MTE1LDkuODA4NTIyNDEgMjAuODk5MDQzMSw5LjExMTIzNDA5IDIxLjcxNDgzMjUsOS4xMTEyMzQwOSBDMjIuNTMwNjIyLDkuMTExMjM0MDkgMjMuMTk4MDg2MSw5LjgwODUyMjQxIDIzLjE5ODA4NjEsMTAuNjYwNzYzNyBDMjMuMTk4MDg2MSwxMS40OTc1MDk3IDIyLjUzMDYyMiwxMi4xOTQ3OTggMjEuNzE0ODMyNSwxMi4xOTQ3OTggTTE1LjQ1NTUwMjQsMTIuMTk0Nzk4IEMxNC42NTQ1NDU1LDEyLjE5NDc5OCAxMy45ODcwODEzLDExLjQ5NzUwOTcgMTMuOTg3MDgxMywxMC42NjA3NjM3IEMxMy45ODcwODEzLDkuODA4NTIyNDEgMTQuNjU0NTQ1NSw5LjExMTIzNDA5IDE1LjQ1NTUwMjQsOS4xMTEyMzQwOSBDMTYuMjcxMjkxOSw5LjExMTIzNDA5IDE2LjkzODc1Niw5LjgwODUyMjQxIDE2LjkzODc1NiwxMC42NjA3NjM3IEMxNi45Mzg3NTYsMTEuNDk3NTA5NyAxNi4yNzEyOTE5LDEyLjE5NDc5OCAxNS40NTU1MDI0LDEyLjE5NDc5OCBNOS4yMTEwMDQ3OCwxMi4xOTQ3OTggQzguMzk1MjE1MzEsMTIuMTk0Nzk4IDcuNzQyNTgzNzMsMTEuNDk3NTA5NyA3Ljc0MjU4MzczLDEwLjY2MDc2MzcgQzcuNzQyNTgzNzMsOS44MDg1MjI0MSA4LjM5NTIxNTMxLDkuMTExMjM0MDkgOS4yMTEwMDQ3OCw5LjExMTIzNDA5IEMxMC4wMjY3OTQzLDkuMTExMjM0MDkgMTAuNjc5NDI1OCw5LjgwODUyMjQxIDEwLjY3OTQyNTgsMTAuNjYwNzYzNyBDMTAuNjc5NDI1OCwxMS40OTc1MDk3IDEwLjAyNjc5NDMsMTIuMTk0Nzk4IDkuMjExMDA0NzgsMTIuMTk0Nzk4IE0yNC43NTU1MDI0LDAgTDYuMjQ0NDk3NjEsMCBDMi44MDMzNDkyOCwwIDAsMi45Mjg2MTA5NiAwLDYuNTM5MDE0OTQgTDAsMTQuNzY3MDE3MiBDMCwxOC4zNzc0MjExIDIuODAzMzQ5MjgsMjEuMzA2MDMyMSA2LjI0NDQ5NzYxLDIxLjMwNjAzMjEgTDExLjMzMjA1NzQsMjEuMzA2MDMyMSBMMTcuNzEwMDQ3OCwyOCBMMTcuNzEwMDQ3OCwyMS4zMDYwMzIxIEwyNC43NTU1MDI0LDIxLjMwNjAzMjEgQzI4LjIxMTQ4MzMsMjEuMzA2MDMyMSAzMSwxOC4zNzc0MjExIDMxLDE0Ljc2NzAxNzIgTDMxLDYuNTM5MDE0OTQgQzMxLDIuOTI4NjEwOTYgMjguMjExNDgzMywwIDI0Ljc1NTUwMjQsMCIgaWQ9IkZpbGwtMSI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="">
+    <div style="position: fixed; z-index: 9999; " class="img_container" >  
+      <img id="img_container_img" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNzNweCIgaGVpZ2h0PSI3M3B4IiB2aWV3Qm94PSIwIDAgNzMgNzMiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+CiAgICA8IS0tIEdlbmVyYXRvcjogU2tldGNoIDUxLjIgKDU3NTE5KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5Hcm91cCAzPC90aXRsZT4KICAgIDxkZXNjPkNyZWF0ZWQgd2l0aCBTa2V0Y2guPC9kZXNjPgogICAgPGRlZnM+CiAgICAgICAgPGNpcmNsZSBpZD0icGF0aC0xIiBjeD0iMzIuNSIgY3k9IjMyLjUiIHI9IjMyLjUiPjwvY2lyY2xlPgogICAgICAgIDxmaWx0ZXIgeD0iLTEwLjglIiB5PSItNy43JSIgd2lkdGg9IjEyMS41JSIgaGVpZ2h0PSIxMjEuNSUiIGZpbHRlclVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgaWQ9ImZpbHRlci0yIj4KICAgICAgICAgICAgPGZlT2Zmc2V0IGR4PSIwIiBkeT0iMiIgaW49IlNvdXJjZUFscGhhIiByZXN1bHQ9InNoYWRvd09mZnNldE91dGVyMSI+PC9mZU9mZnNldD4KICAgICAgICAgICAgPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iMiIgaW49InNoYWRvd09mZnNldE91dGVyMSIgcmVzdWx0PSJzaGFkb3dCbHVyT3V0ZXIxIj48L2ZlR2F1c3NpYW5CbHVyPgogICAgICAgICAgICA8ZmVDb2xvck1hdHJpeCB2YWx1ZXM9IjAgMCAwIDAgMCAgIDAgMCAwIDAgMCAgIDAgMCAwIDAgMCAgMCAwIDAgMC4yMjg3OTg2ODcgMCIgdHlwZT0ibWF0cml4IiBpbj0ic2hhZG93Qmx1ck91dGVyMSI+PC9mZUNvbG9yTWF0cml4PgogICAgICAgIDwvZmlsdGVyPgogICAgPC9kZWZzPgogICAgPGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgaWQ9IlByZSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE1ODcuMDAwMDAwLCAtNjEzLjAwMDAwMCkiPgogICAgICAgICAgICA8ZyBpZD0iR3JvdXAtMyIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTU5MS4wMDAwMDAsIDYxNS4wMDAwMDApIj4KICAgICAgICAgICAgICAgIDxnIGlkPSJHcm91cC01LUNvcHkiPgogICAgICAgICAgICAgICAgICAgIDxnIGlkPSJPdmFsLTQiPgogICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9ImJsYWNrIiBmaWxsLW9wYWNpdHk9IjEiIGZpbHRlcj0idXJsKCNmaWx0ZXItMikiIHhsaW5rOmhyZWY9IiNwYXRoLTEiPjwvdXNlPgogICAgICAgICAgICAgICAgICAgICAgICA8dXNlIGZpbGw9IiNFQjU2NTYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgeGxpbms6aHJlZj0iI3BhdGgtMSI+PC91c2U+CiAgICAgICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICAgICAgPGcgaWQ9Ikdyb3VwLTUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE3LjAwMDAwMCwgMjEuMDAwMDAwKSIgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgICAgICAgICAgICAgPHBhdGggZD0iTTIxLjcxNDgzMjUsMTIuMTk0Nzk4IEMyMC44OTkwNDMxLDEyLjE5NDc5OCAyMC4yNDY0MTE1LDExLjQ5NzUwOTcgMjAuMjQ2NDExNSwxMC42NjA3NjM3IEMyMC4yNDY0MTE1LDkuODA4NTIyNDEgMjAuODk5MDQzMSw5LjExMTIzNDA5IDIxLjcxNDgzMjUsOS4xMTEyMzQwOSBDMjIuNTMwNjIyLDkuMTExMjM0MDkgMjMuMTk4MDg2MSw5LjgwODUyMjQxIDIzLjE5ODA4NjEsMTAuNjYwNzYzNyBDMjMuMTk4MDg2MSwxMS40OTc1MDk3IDIyLjUzMDYyMiwxMi4xOTQ3OTggMjEuNzE0ODMyNSwxMi4xOTQ3OTggTTE1LjQ1NTUwMjQsMTIuMTk0Nzk4IEMxNC42NTQ1NDU1LDEyLjE5NDc5OCAxMy45ODcwODEzLDExLjQ5NzUwOTcgMTMuOTg3MDgxMywxMC42NjA3NjM3IEMxMy45ODcwODEzLDkuODA4NTIyNDEgMTQuNjU0NTQ1NSw5LjExMTIzNDA5IDE1LjQ1NTUwMjQsOS4xMTEyMzQwOSBDMTYuMjcxMjkxOSw5LjExMTIzNDA5IDE2LjkzODc1Niw5LjgwODUyMjQxIDE2LjkzODc1NiwxMC42NjA3NjM3IEMxNi45Mzg3NTYsMTEuNDk3NTA5NyAxNi4yNzEyOTE5LDEyLjE5NDc5OCAxNS40NTU1MDI0LDEyLjE5NDc5OCBNOS4yMTEwMDQ3OCwxMi4xOTQ3OTggQzguMzk1MjE1MzEsMTIuMTk0Nzk4IDcuNzQyNTgzNzMsMTEuNDk3NTA5NyA3Ljc0MjU4MzczLDEwLjY2MDc2MzcgQzcuNzQyNTgzNzMsOS44MDg1MjI0MSA4LjM5NTIxNTMxLDkuMTExMjM0MDkgOS4yMTEwMDQ3OCw5LjExMTIzNDA5IEMxMC4wMjY3OTQzLDkuMTExMjM0MDkgMTAuNjc5NDI1OCw5LjgwODUyMjQxIDEwLjY3OTQyNTgsMTAuNjYwNzYzNyBDMTAuNjc5NDI1OCwxMS40OTc1MDk3IDEwLjAyNjc5NDMsMTIuMTk0Nzk4IDkuMjExMDA0NzgsMTIuMTk0Nzk4IE0yNC43NTU1MDI0LDAgTDYuMjQ0NDk3NjEsMCBDMi44MDMzNDkyOCwwIDAsMi45Mjg2MTA5NiAwLDYuNTM5MDE0OTQgTDAsMTQuNzY3MDE3MiBDMCwxOC4zNzc0MjExIDIuODAzMzQ5MjgsMjEuMzA2MDMyMSA2LjI0NDQ5NzYxLDIxLjMwNjAzMjEgTDExLjMzMjA1NzQsMjEuMzA2MDMyMSBMMTcuNzEwMDQ3OCwyOCBMMTcuNzEwMDQ3OCwyMS4zMDYwMzIxIEwyNC43NTU1MDI0LDIxLjMwNjAzMjEgQzI4LjIxMTQ4MzMsMjEuMzA2MDMyMSAzMSwxOC4zNzc0MjExIDMxLDE0Ljc2NzAxNzIgTDMxLDYuNTM5MDE0OTQgQzMxLDIuOTI4NjEwOTYgMjguMjExNDgzMywwIDI0Ljc1NTUwMjQsMCIgaWQ9IkZpbGwtMSI+PC9wYXRoPgogICAgICAgICAgICAgICAgPC9nPgogICAgICAgICAgICA8L2c+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=" alt="">
     </div>
 </div>
 <!-- Filex Direction Menu -->
@@ -561,10 +553,10 @@
                 </div>
                 <div class="col-md-6 d-flex justify-content-end  ">
                     <ul class="foot_logoes d-flex justify-content-between " > 
-                    <li><a href=""><img src="static/footer_logo/egov_logo.png" alt=""></a></li>
-                    <li><a href=""><img src="static/footer_logo/Adf.png" alt=""></a></li>
-                    <li><a href=""><img src="static/footer_logo/info.png" alt=""></a></li>
-                    <li><a href=""><img src="static/footer_logo/maliyye.png" alt=""></a></li></ul>
+                    <li><a href=""><img src="/footer_logo/egov_logo.png" alt=""></a></li>
+                    <li><a href=""><img src="/footer_logo/Adf.png" alt=""></a></li>
+                    <li><a href=""><img src="/footer_logo/info.png" alt=""></a></li>
+                    <li><a href=""><img src="/footer_logo/maliyye.png" alt=""></a></li></ul>
                     
                 </div>
                 
@@ -581,11 +573,11 @@
 
 <div id="message_box_id" class="message_box" >
     <div class="box_close_div  " >
-        <img id="box_close" onclick="MySecondFunction()" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMS4zMTQiIGhlaWdodD0iMTEuMzE0IiB2aWV3Qm94PSIwIDAgMTEuMzE0IDExLjMxNCI+DQogIDxnIGlkPSJHcm91cF8xMSIgZGF0YS1uYW1lPSJHcm91cCAxMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNS42NTcgLTUuNDY4KSByb3RhdGUoNDUpIj4NCiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkiIHdpZHRoPSIyIiBoZWlnaHQ9IjE0IiByeD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi44NjYgMC44NjYpIiBmaWxsPSIjOWI5YjliIi8+DQogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV85X0NvcHkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkgQ29weSIgd2lkdGg9IjIiIGhlaWdodD0iMTQiIHJ4PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC44NjYgNi44NjYpIHJvdGF0ZSg5MCkiIGZpbGw9IiM5YjliOWIiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" alt="">
+        <img id="box_close" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMS4zMTQiIGhlaWdodD0iMTEuMzE0IiB2aWV3Qm94PSIwIDAgMTEuMzE0IDExLjMxNCI+DQogIDxnIGlkPSJHcm91cF8xMSIgZGF0YS1uYW1lPSJHcm91cCAxMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNS42NTcgLTUuNDY4KSByb3RhdGUoNDUpIj4NCiAgICA8cmVjdCBpZD0iUmVjdGFuZ2xlXzkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkiIHdpZHRoPSIyIiBoZWlnaHQ9IjE0IiByeD0iMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi44NjYgMC44NjYpIiBmaWxsPSIjOWI5YjliIi8+DQogICAgPHJlY3QgaWQ9IlJlY3RhbmdsZV85X0NvcHkiIGRhdGEtbmFtZT0iUmVjdGFuZ2xlIDkgQ29weSIgd2lkdGg9IjIiIGhlaWdodD0iMTQiIHJ4PSIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxNC44NjYgNi44NjYpIHJvdGF0ZSg5MCkiIGZpbGw9IiM5YjliOWIiLz4NCiAgPC9nPg0KPC9zdmc+DQo=" alt="">
     </div>
     <div class="container" >
        <div class="message_start d-flex"  >
-            <img   src="static/footer_logo/message_box.jpeg"style width="60px", height="60px" alt="">
+            <img   src="/footer_logo/message_box.jpeg"style width="60px", height="60px" alt="">
             <div class="start1" >
                 <h3>Onlayn Çata xoş gəlmişsiniz!</h3>
                 <p>Çata qoşulmaq üçün müvafiq məlumatı qeyd etməyiniz xahiş olunur.</p>
@@ -616,33 +608,31 @@
 <!-- MessageBox -->
 
 
-                    
-            
-    
-
-    
-
-
-
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <!-- <script src="static/js/body.js"></script>
 <script src="static/js/footer.js"></script> -->
+<script rel="stylesheet" href ="{{url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
 <script rel="stylesheet" href ="{{url_for('static', filename='js/body.js')}}"></script>
 <script rel="stylesheet" href ="{{url_for('static', filename='js/footer.js')}}"></script>
 
 <script>
-   console.log("Sara");
 $('.body_buttons_span').click(function(){
     var isotope = $('.isotope')
     isotope.css('display', 'none');
     $('.body_buttons_span').css({
-        'color': "#2e3131",
         "background-color":'white'
+        
+    })
+    $('.body_buttons_span').children().css({
+        'color': "#2e3131",
         
     })
     $(this).css({
         "background-color": "#ef3e42",
+        "color": "white"
+    })
+    $(this).children().css({
         "color": "white"
     })
 
@@ -674,26 +664,34 @@ header.classList.add('d-none')
 document.querySelector('.menu').classList.add('d-block')
 
 })
+$('#img_container_img').click(function(){
+  $("#img_container_img").css('display', 'none')
+  $("#message_box_id").css('display', 'block')
+})   
+$('#box_close').click(function(){
+  $("#message_box_id").css('display', 'none')
+  $("#img_container_img").css('display', 'block')
 
-document.querySelector('.menu-close-btn').addEventListener('click', function(){
-var header = document.querySelector('.header-none')
-var menu = document.querySelector('.menu')
-header.classList.remove('d-none')
-menu.classList.remove('d-block')
-})
+})   
+// document.querySelector('.menu-close-btn').addEventListener('click', function(){
+// var header = document.querySelector('.header-none')
+// var menu = document.querySelector('.menu')
+// header.classList.remove('d-none')
+// menu.classList.remove('d-block')
+// })
 
-document.querySelector('.search-bar button').addEventListener('click', function(e){
-e.stopPropagation();
-this.parentNode.classList.toggle('active');
+// document.querySelector('.search-bar button').addEventListener('click', function(e){
+// e.stopPropagation();
+// this.parentNode.classList.toggle('active');
 
-});
+// });
 
-document.addEventListener("click", function(elem){
-const element = elem.target;
-if(element.id != "search-input"){
-    document.querySelector('.search-bar').classList.remove('active')
-}
-})
+// document.addEventListener("click", function(elem){
+// const element = elem.target;
+// if(element.id != "search-input"){
+//     document.querySelector('.search-bar').classList.remove('active')
+// }
+// })
 
 
 

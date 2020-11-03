@@ -21,15 +21,15 @@ class Cards(db.Model):
         db.session.commit()
 
 
-    def __init__(self,card_name, card_platform, card_info, card_price, card_service, card_image_url, card_type):
-        self.card_name = card_name
-        self.card_platform = card_platform
-        self.card_info =card_info
-        self.card_price = card_price
-        self.card_service = card_service
-        self.card_image_url = card_image_url
+    # def __init__(self,card_name, card_platform, card_info, card_price, card_service, card_image_url, card_type):
+    #     self.card_name = card_name
+    #     self.card_platform = card_platform
+    #     self.card_info =card_info
+    #     self.card_price = card_price
+    #     self.card_service = card_service
+    #     self.card_image_url = card_image_url
         
-        self.card_type = card_type
+    #     self.card_type = card_type
 
 class Type(db.Model):
     id = db.Column(db.Integer, primary_key=True)

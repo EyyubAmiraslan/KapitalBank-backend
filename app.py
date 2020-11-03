@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import  os
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path = "", static_folder = "static")
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:example@127.0.0.1:3306/KapitalBank'
 
